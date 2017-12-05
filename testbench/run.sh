@@ -9,4 +9,6 @@ fi
 # Compile files
 vlog -work work ../src/sha-256-functions.v
 vlog -work work ../src/sha256_transform.v
+vlog -work work ../src/sha256_double.v
+vlog -work work ../src/fifo_sync.v
 vlog -work work test_sha256_transform.v
