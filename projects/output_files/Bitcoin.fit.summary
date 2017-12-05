@@ -1,16 +1,16 @@
-Fitter Status : Successful - Thu Nov 30 15:50:21 2017
+Fitter Status : Successful - Tue Dec 05 18:18:52 2017
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Bitcoin
-Top-level Entity Name : fpgaminer_top
+Top-level Entity Name : sha256_top
 Family : Cyclone V
 Device : 5CSEBA5U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 24,659 / 32,070 ( 77 % )
-Total registers : 48529
+Logic utilization (in ALMs) : 21,627 / 32,070 ( 67 % )
+Total registers : 43234
 Total pins : 4 / 314 ( 1 % )
 Total virtual pins : 0
-Total block memory bits : 37,760 / 4,065,280 ( < 1 % )
-Total RAM Blocks : 142 / 397 ( 36 % )
+Total block memory bits : 19,328 / 4,065,280 ( < 1 % )
+Total RAM Blocks : 74 / 397 ( 19 % )
 Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

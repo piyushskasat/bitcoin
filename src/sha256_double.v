@@ -21,7 +21,7 @@ module sha256_double(
   sha256_transform u_sha256_1 (
     .clk(clk),
     .rx_state(hash0),
-    .rx_input(data1),
+    .rx_input({384'h000002800000000000000000000000000000000000000000000000000000000000000000000000000000000080000000, data1[127:0]}),
     .tx_hash(hash1)
   );
 
