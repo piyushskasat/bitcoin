@@ -2,22 +2,23 @@
 
 `timescale 1ns/1ps
 
+`define SIM
 module test_sha256_transform();
 
   reg clk;
   reg resetn;
 
-  reg [511:0] data0;
-  reg [511:0] data1;
-  wire [511:0] data0_rev;
-  wire [511:0] data1_rev;
-  reg [639:0] captured_data;
-  reg [255:0] correct_hash;
-  wire [255:0] correct_hash_out;
+  reg   [511:0] data0;
+  reg   [511:0] data1;
+  wire  [511:0] data0_rev;
+  wire  [511:0] data1_rev;
+  reg   [639:0] captured_data;
+  reg   [255:0] correct_hash;
+  wire  [255:0] correct_hash_out;
 
-  reg  [255:0] hash0;
-  wire [255:0] hash1;
-  wire [255:0] hash2;
+  reg   [255:0] hash0;
+  wire  [255:0] hash1;
+  wire  [255:0] hash2;
 
   reg [31:0]  cycle = 32'd0;
 

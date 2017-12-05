@@ -33,13 +33,13 @@ module sha256_double(
   );
 
   generate
-    for (i = 0; i < 256; i = i+32) begin
+    for (i = 0; i < 256; i = i+32) begin : loop_rev
       assign hash2_rev[(i + 31) : i] = hash2_calc[(255 - i) : (224 - i)];
     end
   endgenerate
 
   generate
-    for (i = 0; i < 256; i = i+8) begin
+    for (i = 0; i < 256; i = i+8) begin : loop_final
       assign hash2[(i + 7) : i] = hash2_rev[(255 - i) : (248 - i)];
     end
   endgenerate
