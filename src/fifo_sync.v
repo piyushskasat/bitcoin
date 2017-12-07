@@ -51,7 +51,7 @@ module fifo_sync(
     if (resetn == 0)
       idx_in  <= 0;
     else if (!(full) && wr_en)
-      idx_in = idx_in + 1;
+      idx_in <= idx_in + 1;
   end
 
   // Increment output pointer if FIFO is not empty
@@ -59,7 +59,7 @@ module fifo_sync(
     if (resetn == 0)
       idx_out  <= 0;
     else if (!(empty) && re_en)
-      idx_out = idx_out + 1;
+      idx_out <= idx_out + 1;
   end
 
   assign low_bits_equal = (idx_in[FIFO_DEPTH_LOG2-1 : 0] == idx_out[FIFO_DEPTH_LOG2-1 : 0]);
