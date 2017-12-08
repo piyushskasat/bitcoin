@@ -53,7 +53,7 @@ module sha256_top (
   sha256_double u_sha256_double (
     .clk(clk),
     .hash0(state0),
-    .data1({merkle_last_32, timestamp, target, nonce}),
+    .data1({padding, merkle_last_32, timestamp, target, nonce}),
     .hash2(hash2)
   );
 
