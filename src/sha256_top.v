@@ -25,6 +25,7 @@ module sha256_top (
   wire [31:0]  timestamp;
   wire [31:0]  target;
   wire [383:0] padding;
+  reg [31:0]  nonce;
 
   spi_slave u_spi_slave (
     .ss    (1'b1),
@@ -41,12 +42,18 @@ module sha256_top (
   assign target         = rdata[31 : 0];
   assign padding        = 384'h800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280;
 
-  assign data = {merkle_last_32, timestamp, target, padding};
+
+  always @(posedge clk)
+  begin
+    nonce <= nonce + 1;
+  end
+
+  assign data = {padding, merkle_last_32, timestamp, target, nonce};
 
   sha256_double u_sha256_double (
     .clk(clk),
     .hash0(state0),
-    .data1(data),
+    .data1({merkle_last_32, timestamp, target, nonce}),
     .hash2(hash2)
   );
 
