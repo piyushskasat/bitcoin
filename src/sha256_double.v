@@ -18,17 +18,16 @@ module sha256_double(
 
   genvar i;
 
-  sha256_transform u_sha256_1 (
+  sha256_transform_1 u_sha256_1 (
     .clk(clk),
     .rx_state(hash0),
-    .rx_input({384'h000002800000000000000000000000000000000000000000000000000000000000000000000000000000000080000000, data1[127:0]}),
+    .rx_input(data1[127:0]),
     .tx_hash(hash1)
   );
 
-  sha256_transform u_sha256_2 (
+  sha256_transform_2 u_sha256_2 (
     .clk(clk),
-    .rx_state(256'h5be0cd191f83d9ab9b05688c510e527fa54ff53a3c6ef372bb67ae856a09e667),
-    .rx_input({256'h0000010000000000000000000000000000000000000000000000000080000000, hash1}),
+    .rx_input(hash1),
     .tx_hash(hash2_calc)
   );
 
